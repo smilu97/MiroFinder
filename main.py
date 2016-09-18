@@ -128,6 +128,8 @@ class MazeFinder :
 		self.printRoute()
 		print 'printed route'
 		self.image.show()
+		pathSplit = self.imagePath.split('.')
+		self.image.save(pathSplit[0] + '.out.' + '.'.join(pathSplit[1:]))
 	def testrun(self) :
 		self.getInputs_test()
 		print 'got input, do dijkstra...'
