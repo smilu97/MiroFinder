@@ -1,5 +1,6 @@
 from PIL import Image
 import numpy as np
+import sys
 
 INFINITE = 2147483647
 
@@ -138,9 +139,18 @@ class MazeFinder :
 		self.printRoute()
 		print 'printed route'
 		self.image.show()
+		pathSplit = self.imagePath.split('.')
+		self.image.save(pathSplit[0] + '.out.' + '.'.join(pathSplit[1:]))
 
 
+def mainFunction() :
+	mazeFinder = MazeFinder()
+	for ar in sys.argv :
+		if ar == '--test' :
+			mazeFinder.testrun()
+			return
+	mazeFinder.run()
 
 if __name__ == '__main__':
-	mazeFinder = MazeFinder()
-	mazeFinder.run()
+	mainFunction()
+			
