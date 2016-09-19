@@ -52,6 +52,7 @@ class MazeFinder :
 		self.resultColor = (int(raw_input("Result Color R : ")), int(raw_input("Result Color G : ")), int(raw_input("Result Color B : ")), self.resultColorAlpha)
 		self.startPoint = (int(raw_input("Start Point X : ")), int(raw_input("Start Point Y : ")))
 		self.endPoint = (int(raw_input("End Point X : ")), int(raw_input("End Point Y : ")))
+		self.resultThickness = int(raw_input("result thickness: "))
 
 	def getInputs_test(self) :
 		self.imagePath = 'miro1.png'
